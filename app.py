@@ -31,7 +31,6 @@ def predictRoute():
         image = request.json['image']
         decodeImage(image,clApp.filename)
         os.system("yolo task=segment mode=predict model= artifacts/model_trainer/best.pt conf=0.25 source=data/inputImage.jpg save=true")
-
         opencodebase64 = encodeImageIntoBase64("runs/segment/predict/inputImage.jpg")
         result = {"image": opencodebase64.decode('utf-8')}
         os.system("rm -rf runs")

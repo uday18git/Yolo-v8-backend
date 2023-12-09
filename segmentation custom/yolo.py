@@ -5,6 +5,7 @@
 from ultralytics import YOLO
 
 model = YOLO("yolov8n-seg.yaml")
-model.to('cuda')
-results = model.train(data="config.yaml", epochs=10) #train the model
+
+
+results = model.train(data="data.yaml", epochs=10,device=0) #train the model
 
