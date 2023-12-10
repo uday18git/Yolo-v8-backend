@@ -2,10 +2,10 @@
 # train -> images and labels
 # val -> images and labels
 # test -> images and labels
+import os
 from ultralytics import YOLO
 
-model = YOLO("yolov8n-seg.yaml")
 
 
-results = model.train(data="data.yaml", epochs=1) #train the model
+os.system("yolo task=segment mode=train model=yolov8n-seg.pt data=data.yaml epochs=1 imgsz=640 save=true")
 

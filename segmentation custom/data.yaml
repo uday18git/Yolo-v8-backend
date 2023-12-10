@@ -2,12 +2,7 @@ train: D:\Yolo-v8-backend\segmentation custom\data\train\images
 val: D:\Yolo-v8-backend\segmentation custom\data\valid\images
 test: D:\Yolo-v8-backend\segmentation custom\data\test\images
 
-nc: 6
-names: ['buildings', 'grounds', 'roads', 'vehicles', 'waters', 'object']
+nc: 5
+names: ['lol', 'rofk', 'jvjh', 'hjbhbj', 'hhvj']
 
 
-#buildings - 0
-#grounds -1
-#roads -2
-#vehicles -3
-#waters-4
