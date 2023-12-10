@@ -2,7 +2,7 @@ from setuptools import find_packages,setup
 
 
 setup(
-    name='cell Segmentation',
+    name='change Segmentation',
     version='0.0.0',
     author = 'Uday',
     author_email = 'kcuday07@gmail.com',
