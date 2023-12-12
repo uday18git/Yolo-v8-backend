@@ -187,6 +187,7 @@ from flask import Flask, request, jsonify, render_template, Response
 from changeSegmentation.utils.main_utils import decodeImage, encodeImageIntoBase64
 from flask_cors import CORS, cross_origin
 from changeSegmentation.constant.application import APP_HOST, APP_PORT
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -210,7 +211,8 @@ def predictRoute():
         # Save the image to the data folder with the name inputImage.jpg
         print("decoding and saving")
         decodeImage(image, clApp.filename)
-
+        # give code to count the time it took to run the yolo
+        x = time.time()
         print("Running the yolo command")
         os.system("yolo task=segment mode=predict model=artifacts\\model_trainer\\best.pt conf=0.25 source=data\\inputImage.jpg save=true")
 
@@ -221,7 +223,8 @@ def predictRoute():
         # Create the result dictionary
         print("Creating the result dictionary")
         result = {"image": opencodebase64.decode('utf-8')}
-
+        y = time.time()
+        print("Time taken to run yolo: ", y - x)
         # Remove the temporary files and folders
         print("Removing the temporary files and folders")
         os.system("rmdir /s /q runs")
