@@ -161,3 +161,6 @@ cython_debug/
 segmentation custom/data
 
 flowcharts
+artifacts
+
+README.md

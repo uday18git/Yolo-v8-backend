@@ -9,8 +9,9 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-    model = YOLO('yolov8n.pt')  # load a pretrained YOLOv8n detection model
+    model = YOLO('yolov8n-seg.pt')  # load a pretrained YOLOv8n detection model
     model.train(data='data.yaml', epochs=9, device=0)
 
 # model.train(data='data.yaml', epochs=1,device=0)
-
+# !!!! blunderrrr
+# remember to use the correct model
